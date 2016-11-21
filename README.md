@@ -54,3 +54,4 @@ You will ask for your machine admin password to update host file.
 * All users and passwords for accesing WP Admin Panel are located in ***ansible/settings.yml*** file.
 * You can `ssh` into the VM with `vagrant ssh` command, with no password.
 * ***WP-CLI*** is installed, so you can run `wp` commands as described in [http://wp-cli.org/](http://wp-cli.org/)
+# assignment
