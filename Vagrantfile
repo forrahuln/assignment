@@ -9,22 +9,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider :virtualbox do |vb|
     vb.name = "wordpress-lemp"
-    vb.memory = 512
+    vb.memory = 1024
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     vb.customize ["modifyvm", :id, "--ioapic", "on"]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
 
   # Ansible provisioner.
-  #comment it for windows
-  #config.vm.provision "ansible" do |ansible|
-  # ansible.playbook = "ansible/playbook.yml"
-  # ansible.limit = 'all'
-  # ansible.sudo = true
-  #end
-  # Windows workaround
-  config.vm.provision :shell, :inline =>
-    "assignment/internal-ansible.sh"
+   comment it for windows
+   config.vm.provision "ansible" do |ansible|
+   ansible.playbook = "ansible/playbook.yml"
+   ansible.limit = 'all'
+   ansible.sudo = true
+  end  
 
   # Sync Data Folder
   config.vm.synced_folder "data/", "/var/www/", owner: "www-data", group: "www-data"
