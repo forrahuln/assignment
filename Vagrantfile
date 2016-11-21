@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #end
   # Windows workaround
   config.vm.provision :shell, :inline =>
-    "ansible/internal-ansible.sh"
+    "assignment/internal-ansible.sh"
 
   # Sync Data Folder
   config.vm.synced_folder "data/", "/var/www/", owner: "www-data", group: "www-data"
